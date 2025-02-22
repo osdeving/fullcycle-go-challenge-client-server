@@ -77,6 +77,7 @@ deactivate Servidor
 Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
 
 @enduml
+```
 
 
 ![Diagrama C4](./assets/sequence.png)

@@ -94,5 +94,7 @@ curl -s "http://localhost:8080/cotacao"
 - 📌 Tem **timeouts de segurança** para evitar travamentos.
 - 📌 Todos os erros são tratados e retornam JSON.
 
-🚀 **Agora sua API está documentada e pronta para uso!** 🚀
+---
+
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀
 

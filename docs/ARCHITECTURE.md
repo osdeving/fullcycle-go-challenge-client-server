@@ -50,6 +50,11 @@ Este documento descreve a arquitetura do projeto, incluindo sua estrutura de dir
 
 O diagrama abaixo representa o fluxo de comunicação entre os componentes do sistema.
 
+![Diagrama de Sequência](docs/assets/sequence.png)
+
+<details>
+  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama</summary>
+
 ```plantuml
 @startuml
 !define plantuml.server https://www.plantuml.com/plantuml/png/
@@ -78,7 +83,14 @@ Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
 
 @enduml
 ```
+</details>
+
 ### **Diagrama C4**
+
+![Diagrama de Sequência](docs/assets/archtecture.png)
+
+<details>
+  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama</summary>
 
 ```plantuml
 @startuml
@@ -102,7 +114,7 @@ Rel(db, serverApp, "Armazena e consulta cotações", "SQL")
 
 @enduml
 ```
-
+</details>
 
 ## 🚀 Conclusão
 Esta arquitetura garante:

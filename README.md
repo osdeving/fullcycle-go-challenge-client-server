@@ -75,8 +75,11 @@ Aqui está a saída gerada pelo programa:
 
 ## 📌 Considerações
 ✅ **Timeouts configurados** para evitar travamentos.
+
 ✅ **Banco de dados otimizado** para armazenar cotações recentes.
+
 ✅ **Código modularizado** para facilitar manutenção.
+
 
 🚀 **Agora seu projeto está documentado e pronto para uso!**
 

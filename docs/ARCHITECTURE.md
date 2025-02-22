@@ -50,7 +50,7 @@ Este documento descreve a arquitetura do projeto, incluindo sua estrutura de dir
 
 O diagrama abaixo representa o fluxo de comunicação entre os componentes do sistema.
 
-![Diagrama de Sequência](/assets/sequence.png)
+![Diagrama de Sequência](assets/sequence.png)
 
 <details>
   <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama</summary>

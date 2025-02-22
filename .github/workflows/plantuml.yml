@@ -1,0 +1,30 @@
+name: Generate PlantUML Diagrams
+
+on:
+  push:
+    paths:
+      - 'docs/assets/*.puml'
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install PlantUML
+        run: sudo apt-get install plantuml -y
+
+      - name: Generate Diagrams
+        run: plantuml -tpng docs/assets/*.puml
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add docs/assets/*.png
+          git commit -m "chore: update PlantUML diagrams" || echo "No changes to commit"
+          git push

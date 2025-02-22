@@ -30,17 +30,23 @@ curl -s "http://localhost:8080/cotacao" | jq
 ```json
 {
   "code": "USD",
-  "bid": "5.2100",
-  "ask": "5.2200",
-  "timestamp": "1708586152",
-  "create_date": "2025-02-22 08:25:12"
+  "codein": "BRL",
+  "name": "Dólar Americano/Real Brasileiro",
+  "high": "5.7355",
+  "low": "5.69525",
+  "varBid": "0.01185946",
+  "pctChange": "0.20795",
+  "bid": "5.732",
+  "ask": "5.734",
+  "timestamp": "1740196158",
+  "create_date": "2025-02-22 00:49:18"
 }
 ```
 
 📌 **Se `all=false` ou não for passado (apenas `bid`):**
 ```json
 {
-  "bid": "5.2100"
+    "bid": "5.732"
 }
 ```
 

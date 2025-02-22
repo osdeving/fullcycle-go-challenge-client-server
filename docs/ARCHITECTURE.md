@@ -53,7 +53,7 @@ O diagrama abaixo representa o fluxo de comunicação entre os componentes do si
 ![Diagrama de Sequência](assets/sequence.png)
 
 <details>
-  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama</summary>
+  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama ou renderizar via servidor externo.</summary>
 
 ```plantuml
 @startuml
@@ -87,10 +87,10 @@ Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
 
 ### **Diagrama C4**
 
-![Diagrama de Sequência](docs/assets/archtecture.png)
+![Diagrama C4](docs/assets/archtecture.png)
 
 <details>
-  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama</summary>
+  <summary>⚠ Caso a imagem não carregue, clique aqui para ver o código-fonte do diagrama ou renderizar via servidor externo.</summary>
 
 ```plantuml
 @startuml

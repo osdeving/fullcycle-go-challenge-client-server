@@ -57,10 +57,15 @@ go run cmd/client/main.go
 - **cURL para testes**
 
 ## 🔄 Fluxo do Sistema
+
 1️⃣ **Cliente (`client.go`)** solicita a cotação do dólar ao servidor.
+
 2️⃣ **Servidor (`server.go`)** busca a cotação da API externa e armazena no banco SQLite.
+
 3️⃣ **Servidor responde ao cliente** com o valor do **bid**.
+
 4️⃣ **Cliente salva o valor da cotação** no arquivo `cotacoes.txt`.
+
 
 ## 📸 Exemplo de Saída do Programa
 

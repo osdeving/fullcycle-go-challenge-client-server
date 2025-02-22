@@ -78,13 +78,30 @@ Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
 
 @enduml
 ```
+### **Diagrama C4**
 
+```plantuml
+@startuml
+!define plantuml.server https://www.plantuml.com/plantuml/png
+!include <C4/C4_Container>
 
-![Diagrama C4](./assets/sequence.png)
+title C4 Diagram - Arquitetura do Sistema
 
-### **Diagrama de Componentes**
+Person(client, "Cliente CLI", "Solicita cotação do dólar")
+System_Boundary(server, "Servidor Go") {
+    Container(serverApp, "Servidor", "Go Web Server", "Recebe requisição do cliente e consulta API externa")
+    ContainerDb(db, "Banco de Dados", "SQLite", "Armazena as cotações do dólar")
+}
+System_Ext(api, "API Externa", "AwesomeAPI", "Fornece a cotação USD/BRL")
 
-![Diagrama C4](./assets/archtecture.png)
+Rel(client, serverApp, "GET /cotacao", "HTTP")
+Rel(serverApp, api, "Busca cotação do dólar", "HTTP, timeout 200ms")
+Rel(serverApp, db, "Salva cotação", "SQL, timeout 10ms")
+Rel(serverApp, client, "Retorna JSON com bid", "HTTP")
+Rel(db, serverApp, "Armazena e consulta cotações", "SQL")
+
+@enduml
+```
 
 
 ## 🚀 Conclusão

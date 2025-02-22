@@ -82,5 +82,5 @@ Aqui está a saída gerada pelo programa:
 
 ---
 
-🚀 **Codado por Willams "osdeving" Sousa**
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀
 

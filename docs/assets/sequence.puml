@@ -1,0 +1,26 @@
+@startuml
+!define plantuml.server https://www.plantuml.com/plantuml/png/
+actor Cliente
+participant "Servidor (Go Web Server)" as Servidor
+participant "API Externa (AwesomeAPI)" as API
+database "Banco de Dados (SQLite)" as DB
+
+Cliente -> Servidor: GET /cotacao
+activate Servidor
+
+Servidor -> API: Solicita cotação do dólar (timeout: 200ms)
+activate API
+API -> Servidor: Retorna JSON com bid
+deactivate API
+
+Servidor -> DB: Salva cotação (timeout: 10ms)
+activate DB
+DB -> Servidor: Confirma inserção
+deactivate DB
+
+Servidor -> Cliente: Retorna JSON (bid) (timeout: 300ms)
+deactivate Servidor
+
+Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
+
+@enduml

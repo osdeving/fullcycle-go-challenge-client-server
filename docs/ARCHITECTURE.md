@@ -46,7 +46,7 @@ Este documento descreve a arquitetura do projeto, incluindo sua estrutura de dir
 5️⃣ **Cliente salva a cotação** no arquivo `cotacoes.txt`.
 
 ## 📌 Diagramas
-## 📌 Diagrama de Sequência
+### 📌 Diagrama de Sequência
 
 O diagrama abaixo representa o fluxo de comunicação entre os componentes do sistema.
 
@@ -78,7 +78,7 @@ Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
 
 @enduml
 ```
-### **Diagrama C4**
+### 📌 **Diagrama C4**
 
 ```plantuml
 @startuml

@@ -110,4 +110,6 @@ Esta arquitetura garante:
 ✅ **Persistência dos dados** via SQLite.
 ✅ **Facilidade de manutenção** com estrutura modularizada.
 
-🚀 **Agora sua arquitetura está bem definida e documentada!**
+---
+
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀

@@ -13,30 +13,28 @@ Este documento descreve a estrutura do banco de dados utilizado no projeto, incl
 Armazena as cotações do dólar obtidas da API externa.
 
 ```sql
-CREATE TABLE IF NOT EXISTS cotacoes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    bid TEXT NOT NULL,
-    ask TEXT NOT NULL,
-    timestamp INTEGER NOT NULL,
-    create_date TEXT NOT NULL
-);
+CREATE TABLE IF NOT EXISTS cotations (
+		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		bid VARCHAR(20) NOT NULL,
+		timestamp Timestamp NOT NULL,
+		create_date Timestamp NOT NULL
+	);
 ```
 
 ### 📌 **Descrição das Colunas**
 | Coluna       | Tipo     | Descrição |
-|-------------|---------|-----------|
-| `id`        | INTEGER | Identificador único (auto incremento) |
-| `bid`       | TEXT    | Valor de compra do dólar |
-| `ask`       | TEXT    | Valor de venda do dólar |
-| `timestamp` | INTEGER | Timestamp UNIX do momento da cotação |
-| `create_date` | TEXT  | Data da cotação no formato `YYYY-MM-DD HH:MM:SS` |
+|-------------|--------------|--------------------------------------------------|
+| `id`        | INTEGER      | Identificador único (auto incremento)            |
+| `bid`       | VARCHAR(20)  | Valor de compra do dólar                         |
+| `timestamp` | TIMESTAMP    | Timestamp UNIX do momento da cotação             |
+| `create_date` | TIMESTAMP  | Data da cotação no formato `YYYY-MM-DD HH:MM:SS` |
 
 ## 🔄 Operações Principais
 
 ### ✅ **Inserir uma nova cotação**
 ```sql
-INSERT INTO cotacoes (bid, ask, timestamp, create_date)
-VALUES (?, ?, ?, ?);
+INSERT INTO cotacoes (bid, timestamp, create_date)
+VALUES (?, ?, ?);
 ```
 
 ### ✅ **Buscar as últimas cotações**
@@ -53,9 +51,9 @@ DELETE FROM cotacoes WHERE id NOT IN (
 
 ## 📌 Considerações
 - **O ID é gerado automaticamente** pelo SQLite (`AUTOINCREMENT`).
-- **As datas são armazenadas no formato `TEXT`** para compatibilidade com operações SQL.
-- **O timestamp é armazenado como `INTEGER`** para facilitar comparações.
-- **O banco de dados é leve** e armazena apenas cotações recentes para evitar sobrecarga.
+- **O banco de dados é o sqlite3** e armazena em um arquivo.
 
-🚀 **Agora seu banco de dados está bem estruturado e documentado!**
+---
+
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀
 

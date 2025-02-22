@@ -39,14 +39,14 @@ Este documento descreve a arquitetura do projeto, incluindo sua estrutura de dir
 - **Contexto:** `context` para controle de timeout
 
 ## 🔄 Fluxo de Dados
-1️⃣ **Cliente (`client.go`)** faz uma requisição `GET /cotacao` para o servidor.
-2️⃣ **Servidor (`server.go`)** busca a cotação na API `https://economia.awesomeapi.com.br/json/last/USD-BRL` (timeout de `200ms`).
-3️⃣ **Servidor armazena no banco** de dados SQLite (timeout de `10ms`).
-4️⃣ **Servidor responde ao cliente** com a cotação (`bid`) em JSON.
-5️⃣ **Cliente salva a cotação** no arquivo `cotacoes.txt`.
+- 1️⃣ **Cliente (`client.go`)** faz uma requisição `GET /cotacao` para o servidor.
+- 2️⃣ **Servidor (`server.go`)** busca a cotação na API `https://economia.awesomeapi.com.br/json/last/USD-BRL` (timeout de `200ms`).
+- 3️⃣ **Servidor armazena no banco** de dados SQLite (timeout de `10ms`).
+- 4️⃣ **Servidor responde ao cliente** com a cotação (`bid`) em JSON.
+- 5️⃣ **Cliente salva a cotação** no arquivo `cotacoes.txt`.
 
 ## 📌 Diagramas
-## 📌 Diagrama de Sequência
+### 📌 Diagrama de Sequência
 
 O diagrama abaixo representa o fluxo de comunicação entre os componentes do sistema.
 
@@ -122,4 +122,6 @@ Esta arquitetura garante:
 ✅ **Persistência dos dados** via SQLite.
 ✅ **Facilidade de manutenção** com estrutura modularizada.
 
-🚀 **Agora sua arquitetura está bem definida e documentada!**
+---
+
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀

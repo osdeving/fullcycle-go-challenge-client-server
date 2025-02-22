@@ -80,6 +80,7 @@ Aqui está a saída gerada pelo programa:
 
 ✅ **Código modularizado** para facilitar manutenção.
 
+---
 
-🚀 **Agora seu projeto está documentado e pronto para uso!**
+🚀 **Codado por Willams "osdeving" Sousa** em 22/02/2025 🚀
 

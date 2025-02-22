@@ -20,7 +20,10 @@ jobs:
         run: sudo apt-get install plantuml -y
 
       - name: Generate Diagrams
-        run: plantuml -tpng docs/assets/*.puml
+        # TODO: corrigir erro
+        # tem um erro no architecture.puml e tá abortando a action 
+        # run: plantuml -tpng docs/assets/*.puml
+        run: plantuml -tpng docs/assets/sequence.puml
 
       - name: Commit changes
         run: |

@@ -46,13 +46,45 @@ Este documento descreve a arquitetura do projeto, incluindo sua estrutura de dir
 5️⃣ **Cliente salva a cotação** no arquivo `cotacoes.txt`.
 
 ## 📌 Diagramas
-### 🌍 **Fluxo de Requisição e Resposta**
+## 📌 Diagrama de Sequência
 
-```
-[ Client ] → (GET /cotacao) → [ Server ] → [ API Externa ]
-   ↓                                      ↓
-[ cotacoes.txt ]                        [ SQLite ]
-```
+O diagrama abaixo representa o fluxo de comunicação entre os componentes do sistema.
+
+```plantuml
+@startuml
+!define plantuml.server https://www.plantuml.com/plantuml/png/
+actor Cliente
+participant "Servidor (Go Web Server)" as Servidor
+participant "API Externa (AwesomeAPI)" as API
+database "Banco de Dados (SQLite)" as DB
+
+Cliente -> Servidor: GET /cotacao
+activate Servidor
+
+Servidor -> API: Solicita cotação do dólar (timeout: 200ms)
+activate API
+API -> Servidor: Retorna JSON com bid
+deactivate API
+
+Servidor -> DB: Salva cotação (timeout: 10ms)
+activate DB
+DB -> Servidor: Confirma inserção
+deactivate DB
+
+Servidor -> Cliente: Retorna JSON (bid) (timeout: 300ms)
+deactivate Servidor
+
+Cliente -> Cliente: Salva bid no arquivo cotacoes.txt
+
+@enduml
+
+
+![Diagrama C4](./assets/sequence.png)
+
+### **Diagrama de Componentes**
+
+![Diagrama C4](./assets/archtecture.png)
+
 
 ## 🚀 Conclusão
 Esta arquitetura garante:
